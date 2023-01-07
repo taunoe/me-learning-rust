@@ -13,10 +13,10 @@ Subcommands:
 - **new** - create packages
 
 ```Bash
-# Create a new binary crate
+# Create a new binary crate
 cargo new my_binary
  
-# Create a new library crate
+# Create a new library crate
 cargo new --lib my_library
 ```
 
@@ -47,16 +47,16 @@ rustfmt src/main.rs
 
 cmd                   |comment
 ----------------------|---------------------------------------
-cargo new             |Create a new binary executable crate
-cargo new --lib       | Create a new library crate
-cargo build           | Compiles our crate
-cargo build --release | Compiles our crate with optimizations
-cargo run             | Compiles our crate and runs the compiled executable
-cargo test            | Run all tests in a crate
-cargo doc --open      | Build and open our crate's documentation in a web browser
-cargo clean           | Cleans up temporary files created during compilation
-cargo publish         | Publishes your crate to `crates.io`
-cargo install         | Installs a binary directly from crates.io
+cargo new             |Create a new binary executable crate
+cargo new --lib       | Create a new library crate
+cargo build           | Compiles our crate
+cargo build --release | Compiles our crate with optimizations
+cargo run             | Compiles our crate and runs the compiled executable
+cargo test            | Run all tests in a crate
+cargo doc --open      | Build and open our crate's documentation in a web browser
+cargo clean           | Cleans up temporary files created during compilation
+cargo publish         | Publishes your crate to `crates.io`
+cargo install         | Installs a binary directly from crates.io
 
 ## Crate
 
@@ -70,7 +70,7 @@ cargo new my_binary
 This will create a folder named my_binary with the following directory structure:
 
 ├── src/
-│  └── main.rs
+│  └── main.rs
 └── Cargo.toml
 
 _Cargo.toml_ serves as the configuration file for our crate.
@@ -92,11 +92,11 @@ struct UnitStruct;
 struct TupleStruct(T); // ... with generic type T
  
 struct StructName {
-  field: NamedTuple,
+  field: NamedTuple,
 }
  
 enum EnumName {
-  VariantName,
+  VariantName,
 }
  
 type TypeAlias = u8;
@@ -115,7 +115,7 @@ let variable_name = true;
  
 // Functions
 fn function_name() {
-    function_call();
+    function_call();
 }
  
 // Macros
@@ -136,13 +136,13 @@ The **[package]** table of our manifest file contains metadata about our crate.
 
 ```Toml
 [package]
-name = "mybinary"  # The crate name
+name = "mybinary"  # The crate name
 version = "0.1.0"  # The crate's current version
 edition = "2021"   # Which "Rust Edition" the crate utilizes
  
-description = ""   # A description of our crate for `crates.io`
+description = ""   # A description of our crate for `crates.io`
 keywords = ""      # Keywords for searches on `crates.io`
-documentation = "" # URL to the crate's documentation
+documentation = "" # URL to the crate's documentation
 homepage = ""      # URL to the crate's homepage
 repository = ""    # URL of the crate's source repository
 authors = [""]     # The authors of the crate
@@ -154,21 +154,21 @@ We can utilize external libraries by declaring them as dependencies. To declare 
 
 ```Toml
 [dependencies]
-serde = "1.0.2"      # Uses version "1.0.2"
-serde_derive = "1.0" # Uses version "1.0.X"
-heck = "*"           # Uses version "X.X.X"
+serde = "1.0.2"      # Uses version "1.0.2"
+serde_derive = "1.0" # Uses version "1.0.X"
+heck = "*"           # Uses version "X.X.X"
 ```
 
 We can also pull dependencies directly from a git repository with the git field:
 
 ```Toml
-serde = { git = "https://github.com/serde-rs/serde" }
+serde = { git = "https://github.com/serde-rs/serde" }
  
-# A specific branch
-serde = { git = "https://github.com/serde-rs/serde", branch = "next" }
+# A specific branch
+serde = { git = "https://github.com/serde-rs/serde", branch = "next" }
  
-# A specific commit hash
-serde = { git = "https://github.com/serde-rs/serde", rev = "7e19ae8c9486a3bbbe51f1befb05edee94c454f9" }
+# A specific commit hash
+serde = { git = "https://github.com/serde-rs/serde", rev = "7e19ae8c9486a3bbbe51f1befb05edee94c454f9" }
 ```
 
 ## Statements
@@ -176,7 +176,7 @@ serde = { git = "https://github.com/serde-rs/serde", rev = "7e19ae8c9486a3bbbe
 A Statement is a segment of code that does not return any value. Statements are easy to identify as they end with a semicolon to denote that nothing is returned.
 
 ```Rust
-// This is a statement, but we cannot access its value
+// This is a statement, but we cannot access its value
 "purple";
 
 // We can access the data created by this statement with the variable answer
@@ -184,8 +184,8 @@ let answer = "purple";
 
 // A function or macro that does not return any data is also a statement
 fn say_answer() {
-  let answer = "purple";
-  println!("{answer}")
+  let answer = "purple";
+  println!("{answer}")
 }
 ```
 
@@ -199,8 +199,8 @@ An Expression is a segment of code that returns a value. Since Rust is an ‘exp
 
 // A function or macro that returns a value is also an expression:
 fn give_answer() -> String {
-  let answer = "green".to_string();
-  answer
+  let answer = "green".to_string();
+  answer
 }
 
 println!("{}", give_answer());
@@ -223,27 +223,27 @@ In Rust, code can be separated into blocks. A block of code is a collection of s
 ```Rust
 // Statement block
 {
-    let number_1 = 11;
-    let number_2 = 31;
-    let sum = number_1 + number_2;
-    println!("{sum}");
+    let number_1 = 11;
+    let number_2 = 31;
+    let sum = number_1 + number_2;
+    println!("{sum}");
 }
  
 // Expression block
 {
-    let number_1 = 11;
-    let number_2 = 31;
-    number_1 + number_2
+    let number_1 = 11;
+    let number_2 = 31;
+    number_1 + number_2
 }
 ```
 
 Blocks can be treated as the single statement or expression they evaluate. This means we can assign variables to a block of code:
 
 ```Rust
-let sum = {
-    let number_1 = 11;
-    let number_2 = 31;
-    number_1 + number_2
+let sum = {
+    let number_1 = 11;
+    let number_2 = 31;
+    number_1 + number_2
 };
  
 println!("{sum}");
@@ -253,9 +253,9 @@ Functions are just callable, named blocks.
 
 ```Rust
 fn sum() -> u32 {
-    let number_1 = 11;
-    let number_2 = 31;
-    number_1 + number_2
+    let number_1 = 11;
+    let number_2 = 31;
+    number_1 + number_2
 }
 ```
 
@@ -269,15 +269,15 @@ We can make an item accessible outside of its normal scope by denoting it as pub
 
 ```Rust
 mod numbers {
-    pub const ZERO: i32 = 0;
+    pub const ZERO: i32 = 0;
 }
  
 mod another_scope {
-    use super::numbers::ZERO;
+    use super::numbers::ZERO;
  
-    fn print_zero() {
-        println!("{ZERO}");
-    }
+    fn print_zero() {
+        println!("{ZERO}");
+    }
 }
 ```
 
@@ -285,10 +285,10 @@ Fields of complex datatypes have their own visibility qualifiers.
 
 ```Rust
 pub struct Number {
-    pub value: i32,
+    pub value: i32,
 }
  
-let mut number = Number { value: 0 };
+let mut number = Number { value: 0 };
  
 // We can only access value directly because it is public
 number.value += 1;
@@ -325,8 +325,8 @@ We can choose to clone() our data, which is equivalent to copying on the heap. B
 We can clone any type that implements the Clone trait.
 
 ```Rust
-let heap_1 = String::from("Prevent corruption!");
-let heap_2 = heap_1.clone(); // We have now cloned the data from `heap_1` into `heap_2`
+let heap_1 = String::from("Prevent corruption!");
+let heap_2 = heap_1.clone(); // We have now cloned the data from `heap_1` into `heap_2`
  
 // We now have two values we can work with
 println!("{heap_1}");
