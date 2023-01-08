@@ -11,6 +11,19 @@ fn kiisu_hi() -> String {
     tere
 }
 
+fn mitu_rida() {
+    println!("{}", "Tere
+vana
+kere.")
+}
+
+fn yks_rida() {
+    println!("{}", "Tere \
+    vana \
+    kere.")
+}
+
+
 fn main() {
     println!("Hi, mumm!");
     say_hi();
@@ -49,5 +62,32 @@ fn main() {
     // We now have two values we can work with
     println!("{stack_1}");
     println!("{stack_2}");
+
+    //
+    mitu_rida();
+    yks_rida();
+
+    let mut number = 12;
+    print!("{}\n", number);
+    number = 13;
+    println!("{}", number);
+
+    //
+    let  a = 20; // Waring
+    let _b = 21; // No warnings
+    let _ = 22;
+
+    let tõde = true;
+    let õigus = false;
+
+    if tõde == õigus {
+        println!("{}", "Tõde on õigus");
+    } else {
+        println!("{}", "Tõde ei ole õigus");
+    }
+
+    let tekst = "Kas maakera on lapik?";
+    println!("Tähti {}", str::len(tekst));
+    println!("Tähti {}", tekst.len());
 
 }
