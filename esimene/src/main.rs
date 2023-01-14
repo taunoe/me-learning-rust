@@ -73,7 +73,7 @@ fn main() {
     println!("{}", number);
 
     //
-    let  a = 20; // Waring
+    //let  a = 20; // Waring
     let _b = 21; // No warnings
     let _ = 22;
 

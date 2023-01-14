@@ -1,4 +1,3 @@
-// 2023-01-14
 fn main() {
     println!("Hello, world!");
 
@@ -9,5 +8,5 @@ fn main() {
     b += 1;
     println!("a = {} & b = {}", a, b);
 
-    let c: u8 = 88;
+    let c: u8 = 256;
 }
