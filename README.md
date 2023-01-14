@@ -45,18 +45,18 @@ rustfmt src/main.rs
 
 - **test** Rust has an entire system built into the language dedicated to tests. We can run the tests in our crate with the `cargo test` command.
 
-cmd                   |comment
-----------------------|---------------------------------------
-cargo new             |Create a new binary executable crate
-cargo new --lib       | Create a new library crate
-cargo build           | Compiles our crate
-cargo build --release | Compiles our crate with optimizations
-cargo run             | Compiles our crate and runs the compiled executable
-cargo test            | Run all tests in a crate
-cargo doc --open      | Build and open our crate's documentation in a web browser
-cargo clean           | Cleans up temporary files created during compilation
-cargo publish         | Publishes your crate to `crates.io`
-cargo install         | Installs a binary directly from crates.io
+cmd                  |comment
+---------------------|---------------------------------------
+cargo new            |Create a new binary executable crate
+cargo new --lib      |Create a new library crate
+cargo build          |Compiles our crate
+cargo build --release|Compiles our crate with optimizations
+cargo run            |Compiles our crate and runs the compiled executable
+cargo test           |Run all tests in a crate
+cargo doc --open     |Build and open our crate's documentation in a web browser
+cargo clean          |Cleans up temporary files created during compilation
+cargo publish        |Publishes your crate to `crates.io`
+cargo install        |Installs a binary directly from crates.io
 
 ## Crate
 
