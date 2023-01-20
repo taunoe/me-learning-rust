@@ -1,3 +1,5 @@
+use core::num;
+
 fn main() {
     println!("Hello, world!");
 
@@ -33,5 +35,35 @@ fn main() {
     let täht = '♥';  // cahr == 4 byte unicode value
     let number = '9';
     println!("\u{261D} ja {} ja {}", täht, number);
+
+    // array
+    let letters = ['a', 'b', 'c'];
+    let first_letter = letters[0];
+    println!("first letter {}", first_letter);
+
+    let numbers: [i32; 5];
+    // init all to 0
+    numbers = [0; 5]; //repeat expression
+    let index = numbers.len();
+    println!("first num {}", numbers[index-1]);
+
+    // multidimentsional arrays
+    let multi = [[1, 2, 3],
+                                [4, 5, 6]];
+    println!("multi [1][1] = {}", multi[1][1]);
+
+    let garage =  [[[0; 100]; 20]; 5];
+    println!("{}", garage[1][1][1]);
+
+    // Tuples
+    let mut stuff = (10, 3.14, 'x');
+    stuff.0 += 1;
+    let stuff_1 = stuff.0;
+    let stuff_2 = stuff.1;
+    println!("stuff: {} {}", stuff_1, stuff_2);
+
+    let (a, b, c) = stuff;
+    println!("b is {}", b);
+
 
 }
