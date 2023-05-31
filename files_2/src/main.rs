@@ -1,3 +1,6 @@
+/*
+Loe faili reaaaval.
+ */
 use std::io::{self, BufRead};
 use std::fs::File;
 
